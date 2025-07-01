@@ -13,6 +13,10 @@ export default function RenderPage() {
 
         const res = await fetch('http://localhost:8002/generate-jewelry-image', {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ prompt }),
         })
 
         const data = await res.json()
